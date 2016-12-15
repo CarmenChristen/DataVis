@@ -28,9 +28,7 @@ dat.columns = ['color','director_name','num_critic_for_reviews','duration',
 ###############################################################################
  
 year_range = range(1915,2014)
-genres_for_plot = ['Animation','Action','Romance','Documentary','Comedy','Drama']
-totalNumber = (2013-1915+1)*[0] 
-#totalNumber = 0
+totalNumber = 99*[0] 
 numberOfAnimation = 99*[0]
 numberOfAction = 99*[0]
 numberOfRomance = 99*[0]

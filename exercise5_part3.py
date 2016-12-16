@@ -46,3 +46,6 @@ plt.scatter(restrictedDatPlot4.duration, restrictedDatPlot4.imdb_score, color = 
 plt.scatter(restrictedDatPlot5.duration, restrictedDatPlot5.imdb_score, color = 'blue', s = 150)
 plt.scatter(restrictedDatPlot6.duration, restrictedDatPlot6.imdb_score, color = 'black', s = 150)
 plt.legend(['reviews<100','100<reviews<200','200<reviews<300','300<reviews<400','400<reviews<500','500<reviews'])
+plt.title('Duration vs. IMDb Score with number of reviews')
+plt.xlabel('Duration[min]')
+plt.ylabel('IMDb Score')

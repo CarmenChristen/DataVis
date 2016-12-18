@@ -24,9 +24,9 @@ dat.columns = ['color','director_name','num_critic_for_reviews','duration',
                'aspect_ratio','movie_facebook_likes']
                
 ###############################################################################
-#     
-###############################################################################
- 
+#prepare and rearrange data
+############################################################################### 
+
 year_range = range(1915,2014)
 totalNumber = 99*[0] 
 numberOfAnimation = 99*[0]
@@ -37,7 +37,12 @@ numberOfComedy = 99*[0]
 numberOfDrama = 99*[0]
 totalNumberGenres = 99*[0]
 restrictedDat = dat[dat.year.isin(year_range)]
-        
+
+
+###############################################################################
+#fill prepared lists
+###############################################################################     
+
 for year in year_range:  
     dataForYear = restrictedDat[restrictedDat.year.isin([year])]
     for genre in dataForYear.genres:
@@ -55,6 +60,10 @@ for year in year_range:
             numberOfDrama[year-1915] = numberOfDrama[year-1915] + 1        
         totalNumber[year-1915] = totalNumber[year-1915] + 1
         totalNumberGenres[year-1915] = numberOfAnimation[year-1915] + numberOfAction[year-1915] + numberOfRomance[year-1915] + numberOfDocumentary[year-1915] + numberOfComedy[year-1915] + numberOfDrama[year-1915]
+
+###############################################################################
+#prepare data for plot 2
+###############################################################################
         
 numberOfAnimationRef = 99*[0]
 numberOfActionRef = 99*[0]
@@ -72,6 +81,10 @@ for i in range(0,99):
         numberOfComedyRef[i] = float(numberOfComedy[i])/totalNumberGenres[i] * 100        
         numberOfDramaRef[i] = float(numberOfDrama[i])/totalNumberGenres[i] * 100
     
+###############################################################################
+#create plots
+###############################################################################
+
 plt.subplot(2,1,1) 
 plt.plot(year_range, totalNumber, color = 'black', linewidth = 10)
 plt.stackplot(year_range, numberOfAnimation, numberOfAction, numberOfRomance, numberOfDocumentary, numberOfComedy, numberOfDrama)

@@ -24,7 +24,7 @@ dat.columns = ['color','director_name','num_critic_for_reviews','duration',
                'aspect_ratio','movie_facebook_likes']
                
 ###############################################################################
-#     
+#prepare data and split in different categories of number_critic_for_reviews
 ###############################################################################
 
 year_range = range(2000,2011)
@@ -37,6 +37,10 @@ restrictedDatPlot3 = restrictedDatReviews[restrictedDatReviews.num_critic_for_re
 restrictedDatPlot4 = restrictedDatReviews[restrictedDatReviews.num_critic_for_reviews.isin(range(300,400))]
 restrictedDatPlot5 = restrictedDatReviews[restrictedDatReviews.num_critic_for_reviews.isin(range(400,500))]
 restrictedDatPlot6 = restrictedDatReviews[restrictedDatReviews.num_critic_for_reviews.isin(range(500,1000))]
+
+###############################################################################
+#create plots and add title/labels
+###############################################################################
 
 plt.xlim([0,230])
 plt.scatter(restrictedDatPlot1.duration, restrictedDatPlot1.imdb_score, color = 'red', s = 150)

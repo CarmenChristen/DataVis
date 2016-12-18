@@ -143,9 +143,7 @@ fig.savefig('task1.png')
         
         import os
         os.chdir(path)       -> set working directory
-        
-        os.chdir('C:/Users/Carmen/Documents/Uni Zürich Bachelor/Uni Zürich 5. Semester/Informatik/Data Visualization/Exercises/Assignment_5/dv_ex_5_14730204/DataVis')
-        
+              
         len(groupedDat)      -> Länge (573)
         
         groupedDatY['imdb_score'].agg(np.average).astype('pd.core.frame.DataFrame')
